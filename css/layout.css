@@ -154,6 +154,11 @@ a.pure-button-primary {
     text-transform: uppercase;
 }
 
+.splash .splash-subhead .img-responsive {
+    height: 360px;
+    width: 295px;
+}
+
 /* This is the main heading that appears on the blue section */
 .splash-head {
     font-size: 20px;
