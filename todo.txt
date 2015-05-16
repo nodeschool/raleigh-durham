@@ -1,0 +1,3 @@
+Change the w w w branch leaves to be RDU.
+Add links to rdu github account.
+Add instructions to install node and other stuff.
