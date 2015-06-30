@@ -62,21 +62,13 @@
           <a href="#"><span class="next-button icon fa-angle-right"></span></a>
           <div class="viewer">
             <div class="reel">
+            {% for event in site.events %}
               <div class="slide">
-                <span class="pennant"><span class="icon fa-rocket"></span></span>
-                <p>Phasellus ultrices nulla quis nibh. Quisque a lectu. Donec consectetuer ligula et vulputate.</p>
-                <a href="#" class="links">More</a>
+                <span class="pennant"><span class="icon fa-calendar"></span></span>
+                <p>{{ event.description }}</p>
+                <a href="{{ event.url }}" class="links">More</a>
               </div>
-              <div class="slide">
-                <span class="pennant"><span class="icon fa-cogs"></span></span>
-                <p>Etiam neque. Vivamus consequat lorem. Nullam semper eleifend. Donec mattis libero eget urna.</p>
-                <a href="#" class="links">More</a>
-              </div>
-              <div class="slide">
-                <span class="pennant"><span class="icon fa-file"></span></span>
-                <p>Maecenas pede nisl, elementum eu, ornare ac, malesuada at, erat. Proin gravida orci porttitor.</p>
-                <a href="#" class="links">More</a>
-              </div>
+            {% endfor %}
             </div>
           </div>
         </div>
@@ -87,60 +79,43 @@
           <div id="featured">
             <div id="contributors">
               
-              <div class="test">
-                <ul>
-                  {% for contributor in site.contributors %}
-                    <li>{{contributor.title}}</li>
-                    <img src="{{contributor.gravatar}}" alt="" class="src">
-                  {% endfor %}
-                </ul>
-              </div>
-
               <div class="row">
                 {% for contributor in site.contributors %}
                 <section class="6u 12u(narrower)">
                   <a href="#" class="image profile"><img src="{{ contributor.profile_pic }}" alt="" height="184" width="184"></a>
                   <h3>{{ contributor.name }}</h3>
                   <p>{{ contributor.description }}</p>
-                  <a href="#" class="link2">More<span class="icon fa-plus-circle"></span></a>
+                  <a href="{{ contributor.github }}" class="link2">More<span class="icon fa-plus-circle"></span></a>
                 </section>
                 {% endfor %}
               </div><!-- /#contributors -->
             </div><!-- /#featured -->
 
           </div>
-          <div id="intro">
-            <section>
-              <div class="heading">
-                <span class="txt1">Fusce pellentesque</span>
-                <span class="txt2">Integer vitae libero ac risus egestas placerat</span>
-              </div>
-            </section>
-          </div>
+          <div id="events">
+            <div id="intro">
+              <section>
+                <div class="heading">
+                  <span class="txt1">Projects</span>
+                  <span class="txt2">Look at what our members have been doing with NodeJS</span>
+                </div>
+              </section>
+            </div>
 
-          <div id="extra">
-            <div class="row 200%">
-              <section class="4u 12u(narrower)">
-                <span class="pennant"><span class="icon fa-tint"></span></span>
-                <div class="box">
-                  <p>Praesent dapibus, neque id fio intion supendibus, tortor neque egestas augu uspendisse urna vulputate magna eros. Aliquam erat volut enean dignissim pellentesque felis</p>
-                </div>
-                <a href="#" class="link">More Info</a>
-              </section>
-              <section class="4u 12u(narrower)">
-                <span class="pennant"><span class="icon fa-pencil"></span></span>
-                <div class="box">
-                  <p>Donec nec justo eget felis fafermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim arcuat uspendisse urna pellentesqu, tincidunt quis, accumsan porttitor, facilisis</p>
-                </div>
-                <a href="#" class="link">More Info</a>
-              </section>
-              <section class="4u 12u(narrower)">
-                <span class="pennant"><span class="icon fa-user"></span></span>
-                <div class="box">
-                  <p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies ciam nibh, viverra non, semper suscipi uspendisse mitind vulputate simpoem</p>
-                </div>
-                <a href="#" class="link">More Info</a>
-              </section>
+
+            <div id="extra">
+              <div class="row 200%">
+
+                {% for project in site.projects %}
+                <section class="4u 12u(narrower)">
+                  <span class="pennant"><span class="icon fa-code"></span></span>
+                  <div class="box">
+                    <p><strong>{{ project.title }}</strong><br />{{ project.description }}</p>
+                  </div>
+                  <a href="{{ project.repo }}" class="link">More Info</a>
+                </section>
+                {% endfor %}
+              </div>
             </div>
           </div>
 
@@ -150,10 +125,10 @@
         <div id="newsletter" class="container">
           <section>
             <header>
-              <h2>Morbi insem uisdui</h2>
-              <span class="byline">Vivamus vestibulum nulla nec ante</span>
+              <h2>Stay Updated</h2>
+              <span class="byline">We will periodically send out information. Don't miss a beat!</span>
             </header>
-            <form method="post" action="#" id="subscribe">
+            <form method="post" action="http://formspree.io/kennethwpeeples@gmail.com" id="subscribe">
               <input type="text" class="text" name="search" placeholder="Email address" />
               <a href="#" class="button">Submit</a>
             </form>
@@ -166,11 +141,9 @@
 
           <div class="row">
             <div class="12u">
-              <span class="copyright">&copy; Untitled. All rights reserved.</span>
+              <span class="copyright">&copy; NodeSchool Augusta \ Powered by <a href="">Jekyll</a> on <a href="">GitHub</a></span>
               <ul class="icons">
-                <li><a href="#" class="icon fa-facebook"><span>Facebook</span></a></li>
-                <li><a href="#" class="icon fa-twitter"><span>Twitter</span></a></li>
-                <li><a href="#" class="icon fa-google-plus"><span>Google+</span></a></li>
+                <li><a href="http://github.com/nodeschool/augusta" class="icon fa-github"><span>GitHub</span></a></li>
               </ul>
 
             </div>
@@ -180,14 +153,7 @@
 
     </div>
 
-    <!-- Scripts -->
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/jquery.dropotron.min.js"></script>
-      <script type="text/javascript" src="assets/js/jquery.slidertron.min.js"></script>
-      <script src="assets/js/skel.min.js"></script>
-      <script src="assets/js/util.js"></script>
-      <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-      <script src="assets/js/main.js"></script>
+    {% include scripts.html %}
 
   </body>
 </html>

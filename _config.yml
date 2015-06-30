@@ -11,6 +11,9 @@ collections:
   events:
     output: true
     permalink: /events/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
 
 version: v0.1.0
 
