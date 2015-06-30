@@ -34,8 +34,9 @@
               <nav id="nav">
                 <ul>
                   <li class="current_page_item"><a href="index.html">Home</a></li>
-                  <li><a href="left-sidebar.html">Contributors</a></li>
-                  <li><a href="right-sidebar.html">Events</a></li>
+                  <li><a href="#contributors">Contributors</a></li>
+                  <li><a href="#events">Events</a></li>
+                  <li><a href="#projects">Projects</a></li>
                 </ul>
               </nav>
 
@@ -84,36 +85,28 @@
         <div id="main" class="container">
 
           <div id="featured">
+            <div id="contributors">
+              
+              <div class="test">
+                <ul>
+                  {% for contributor in site.contributors %}
+                    <li>{{contributor.title}}</li>
+                    <img src="{{contributor.gravatar}}" alt="" class="src">
+                  {% endfor %}
+                </ul>
+              </div>
 
-            <div class="row">
-              <section class="6u 12u(narrower)">
-                <a href="#" class="image"><img src="assets/img/placeholder.png" alt=""></a>
-                <h3>Phasellus ultri</h3>
-                <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
-                <a href="#" class="link2">More<span class="icon fa-plus-circle"></span></a>
-              </section>
-              <section class="6u 12u(narrower)">
-                <a href="#" class="image"><img src="assets/img/placeholder.png" alt=""></a>
-                <h3>Aliquam tincid</h3>
-                <p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</p>
-                <a href="#" class="link2">More<span class="icon fa-plus-circle"></span></a>
-              </section>
-            </div>
-
-            <div class="row">
-              <section class="6u 12u(narrower)">
-                <a href="#" class="image"><img src="assets/img/placeholder.png" alt=""></a>
-                <h3>Phasellus ultri</h3>
-                <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
-                <a href="#" class="link2">More<span class="icon fa-plus-circle"></span></a>
-              </section>
-              <section class="6u 12u(narrower)">
-                <a href="#" class="image"><img src="assets/img/placeholder.png" alt=""></a>
-                <h3>Aliquam tincid</h3>
-                <p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</p>
-                <a href="#" class="link2">More<span class="icon fa-plus-circle"></span></a>
-              </section>
-            </div>
+              <div class="row">
+                {% for contributor in site.contributors %}
+                <section class="6u 12u(narrower)">
+                  <a href="#" class="image profile"><img src="{{ contributor.profile_pic }}" alt="" height="184" width="184"></a>
+                  <h3>{{ contributor.name }}</h3>
+                  <p>{{ contributor.description }}</p>
+                  <a href="#" class="link2">More<span class="icon fa-plus-circle"></span></a>
+                </section>
+                {% endfor %}
+              </div><!-- /#contributors -->
+            </div><!-- /#featured -->
 
           </div>
           <div id="intro">

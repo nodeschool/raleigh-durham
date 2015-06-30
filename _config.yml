@@ -1,2 +1,18 @@
 name: NodeSchool Augusta
 description: Augusta, Ga Chapter of NodeSchool
+url: "http://nodeschool.io/augusta"
+
+permalink: /:title/
+
+collections:
+  contributors:
+    output: true
+    permalink: /contributors/:path/
+  events:
+    output: true
+    permalink: /events/:path/
+
+version: v0.1.0
+
+exclude:
+  - README.md
