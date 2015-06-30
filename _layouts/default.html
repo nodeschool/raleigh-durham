@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<!--
+  Axiom by Pixelarity
+  pixelarity.com @pixelarity
+  License: pixelarity.com/license
+-->
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }} - {{ site.description}}</title>
+
+    {% include meta.html %}
+
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+  </head>
+  <body class="homepage">
+    <div id="page-wrapper">
+
+      <!-- Header -->
+        <div id="header">
+          <div class="container">
+
+            <!-- Logo -->
+              <div id="logo">
+                <div>
+                  <h1><a href="{{ site.baseurl }}">{{ site.name }}</a></h1>
+                  <span>{{ site.description }}</span>
+                </div>
+              </div>
+
+            <!-- Nav -->
+              <nav id="nav">
+                <ul>
+                  <li class="current_page_item"><a href="index.html">Home</a></li>
+                  <li><a href="#contributors">Contributors</a></li>
+                  <li><a href="#events">Events</a></li>
+                  <li><a href="#projects">Projects</a></li>
+                </ul>
+              </nav>
+
+          </div>
+        </div>
+
+      <!-- Banner -->
+      <div id="events">
+        <div id="banner" class="container">
+          <section>
+            <header>
+              <h2>Upcoming Events</h2>
+              <span class="byline">Check here for upcoming meetups, workshops, and more</span>
+            </header>
+          </section>
+        </div>
+
+      <!-- Slider -->
+        <div id="slider" class="container">
+          <a href="#"><span class="previous-button icon fa-angle-left"></span></a>
+          <a href="#"><span class="next-button icon fa-angle-right"></span></a>
+          <div class="viewer">
+            <div class="reel">
+            {% for event in site.events %}
+              <div class="slide">
+                <span class="pennant"><span class="icon fa-calendar"></span></span>
+                <p>{{ event.description }}</p>
+                <a href="{{ event.meetup_link }}" class="links">More</a>
+              </div>
+            {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main -->
+        <div id="main" class="container">
+          <div id="contributors">
+            <div class="section-label">
+                <section>
+                  <div class="heading">
+                    <span class="txt1">Contributors</span>
+                    <span class="txt2">Meet the members of NodeSchool Augusta</span>
+                  </div>
+                </section>
+            </div>
+            <div id="featured">
+              <div class="row">
+                {% for contributor in site.contributors %}
+                <section class="6u 12u(narrower)">
+                  <a href="{{ contributor.github }}" class="image profile"><img src="{{ contributor.profile_pic }}" alt="" height="184" width="184"></a>
+                  <h3>{{ contributor.name }}</h3>
+                  <p>{{ contributor.description }}</p>
+                  <a href="{{ contributor.github }}" class="link2">More<span class="icon fa-plus-circle"></span></a>
+                </section>
+                {% endfor %}
+              </div>
+            </div><!-- /#featured -->
+          </div><!-- /#contributors -->
+
+          <div id="projects">
+            <div class="section-label">
+              <section>
+                <div class="heading">
+                  <span class="txt1">Projects</span>
+                  <span class="txt2">Check out our NodeJS projects</span>
+                </div>
+              </section>
+            </div>
+
+
+            <div id="extra">
+              <div class="row 200%">
+
+                {% for project in site.projects %}
+                <section class="4u 12u(narrower)">
+                  <span class="pennant"><span class="icon fa-code"></span></span>
+                  <div class="box">
+                    <p><strong>{{ project.title }}</strong><br />{{ project.description }}</p>
+                  </div>
+                  <a href="{{ project.repo }}" class="link">More Info</a>
+                </section>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      <!-- Newsletter -->
+        <div id="newsletter" class="container">
+          <section>
+            <header>
+              <h2>Stay Updated</h2>
+              <span class="byline">We will periodically send out information. Don't miss a beat!</span>
+            </header>
+            <form method="post" action="http://formspree.io/kennethwpeeples@gmail.com" id="subscribe">
+              <input type="text" class="text" name="search" placeholder="Email address" />
+              <a href="#" class="button">Submit</a>
+            </form>
+          </section>
+
+        </div>
+
+      <!-- Footer -->
+        <div id="footer" class="container">
+
+          <div class="row">
+            <div class="12u">
+              <span class="copyright">&copy; NodeSchool Augusta \ Powered by <a href="">Jekyll</a> on <a href="">GitHub</a></span>
+              <ul class="icons">
+                <li><a href="http://github.com/nodeschool/augusta" class="icon fa-github"><span>GitHub</span></a></li>
+              </ul>
+
+            </div>
+          </div>
+
+        </div>
+
+    </div>
+
+    {% include scripts.html %}
+
+  </body>
+</html>
