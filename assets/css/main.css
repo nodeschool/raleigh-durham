@@ -2143,6 +2143,42 @@
 			font-size: 2.2em;
 		}
 
+
+	.section-label {
+		position: relative;
+		padding: 6em 0em;
+		background: url(../../assets/img/pic05.jpg) no-repeat center top;
+		background-size: cover;
+		text-align: center;
+		color: #FFF;
+	}
+
+		.section-label .heading {
+			position: relative;
+			width: 80%;
+			margin: 0em auto;
+			letter-spacing: 0.10em;
+			line-height: 2em;
+			z-index: 2;
+		}
+
+			.section-label .heading span {
+				display: inline-block;
+				padding: 0.30em 0.30em 0.50em 0.30em !important;
+				text-align: center;
+			}
+
+		.section-label .txt1 {
+			background: #3E4442;
+			font-size: 3.2em;
+			font-weight: 700;
+		}
+
+		.section-label .txt2 {
+			background: #80B763;
+			font-size: 2.2em;
+		}
+
 /* Extra */
 
 	#extra {
