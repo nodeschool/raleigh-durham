@@ -1,12 +1,12 @@
-# NodeSchool Augusta
+# NodeSchool Raleigh-Durham
 
-Check out NodeSchool Augusta! Take a peek at our site: http://nodeschool.io/augusta/
+Check out NodeSchool Raleigh-Durham! Take a peek at our site: http://nodeschool.io/raleigh-durham/
 
 ## Talk to Us
 
- - [Github Issues](https://github.com/nodeschool/augusta/issues)
+ - [Github Issues](https://github.com/nodeschool/raleigh-durham/issues)
 
 ## Contributors
 
- - Kenneth Peeples, [kpeeples@redhat.com](kpeeples@redhat.com)
- - Josh Sandlin, [josh@thenullbyte.org](josh@thenullbyte.org)
+ - Jean-Marcel Belmont, [marcelbelmont@gmail.com](marcelbelmont@gmail.com)
+ - Brian Marks, [brian.p.marks@gmail.com](brian.p.marks@gmail.com)
