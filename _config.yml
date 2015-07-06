@@ -1,0 +1,21 @@
+name: NodeSchool Raleigh-Durham
+description: Raleigh, NC Chapter of NodeSchool
+url: "http://nodeschool.io/raleigh-durham"
+
+permalink: /:title/
+
+collections:
+  contributors:
+    output: true
+    permalink: /contributors/:path/
+  events:
+    output: true
+    permalink: /events/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+version: v0.1.0
+
+exclude:
+  - README.md
