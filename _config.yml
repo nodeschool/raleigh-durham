@@ -1,7 +1,7 @@
 name: NodeSchool Raleigh-Durham
 description: Raleigh, NC Chapter of NodeSchool
 url: "http://nodeschool.io/raleigh-durham"
-logo: "/assets/img/nodeschool-rdu-sticker.png"
+logo: "assets/img/nodeschool-rdu-sticker.png"
 
 permalink: /:title/
 
